@@ -1,0 +1,21 @@
+ARCHIVED NOTE — superseded by DOCS/README_FIRST.TXT in 0.0.5.
+
+ARCHIVED NOTE — superseded by DOCS/README_FIRST.TXT in 0.0.5.
+
+NBJWLINK 0.0.4 - BOOTSTRAP ARGUMENT QUOTING FIX
+===============================================
+Root cause: MAKE.CMD passes -Root "%ROOT%" to powershell.exe.
+Because %~dp0 ends in a backslash (e.g. C:\AI\JLINK\), the native Windows
+command-line quoting layer can pass the trailing double quote into the argument.
+New-Item then receives an invalid path such as C:\AI\JLINK".
+
+Resolution: GET_WATCOM.PS1 determines the project directory using $PSScriptRoot.
+There is no -Root parameter to quote; AUDIT.CMD/MAKE_WIN1GUI.CMD also omit it.
+
+Install: Extract this ZIP over your project folder, e.g. C:\AI\JLINK.
+First execute PRECHECK.CMD; it should print PASS BOOTSTRAP PATH and download
+nothing. Then run MAKE.CMD. For a successful linker build, run AUDIT.CMD
+and MAKE_WIN1GUI.CMD. The first toolchain download may be large.
+
+No change to the Win1-compatible NE writer or OMF linking implementation.
+This correction was statically checked, but not executed on Windows here.

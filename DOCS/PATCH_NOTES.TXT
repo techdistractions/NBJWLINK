@@ -1,0 +1,8 @@
+NBJWLINK 0.0.2. Source changes against official JWLINK v2.0:
+- h/formats.h: win1 opt-in flag
+- h/cmdos2.h + c/cmdos2.c: OPTION WIN1 handler, format validation
+- c/cmdtable.c: parse OPTION WIN1
+- c/loados2.c: real-mode loader-target metadata, segment flags, 0x400 DOS
+  stub/NE placement, explicit 4-byte empty resource table, complete MZ file size
+- All untouched OMF/FIXUPP/public/export libraries remain upstream JWLINK.
+Windows runtime not verified. No NBOMFNE code copied.

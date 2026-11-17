@@ -1,0 +1,22 @@
+NBJWLINK 0.0.6 - WMAKE macro repair
+==================================
+Root cause: Upstream SOURCE\jwlink-2.0\Makefile uses WATCOM=\watcom if
+no WMAKE macro WATCOM was defined. Setting set "WATCOM=..." in MAKE.CMD
+sets a Windows environment variable; this makefile checks the make macro.
+Consequently WMAKE attempted \watcom\binnt\wcc386 and failed E14.
+
+Overlay contents: MAKE.CMD, SOURCE\jwlink-2.0\Makefile,
+TESTS\WATCOM_PATH.MAK, CHANGES.TXT and this note.
+
+Extract over existing C:\AI\JLINK, preserving TOOLS and BOOTSTRAP.
+Run MAKE.CMD, then AUDIT.CMD and MAKE_WIN1GUI.CMD.
+The standalone PRECHECK.CMD in 0.0.5 still works unchanged.
+
+MAKE.CMD now passes command-line WATCOM=<local path> to WMAKE.
+A separate WMAKE probe confirms the macro actually resolves to that path.
+Upstream makefile now fails immediately if WATCOM is omitted instead of
+silently falling back to \watcom. Build transcript: LOGS\BUILD_WIN32.LOG;
+probe transcript: LOGS\WATCOM_MACRO.LOG.
+
+Only file existence, script structure and archive contents are verified here.
+Windows-hosted full build and real-mode UAT still require execution on your PC.

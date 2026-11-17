@@ -1,0 +1,22 @@
+NBJWLINK 0.0.8 — Windows 1.x GUI smoke correction
+
+Evidence from uploaded failed WIN1GUI.EXE:
+- Real NE header at 0x400, KERNEL.91 / USER.1 ordinal relocations, flags 0x0002.
+- Code begins CALL FAR InitTask; it omits the eight NOP bytes, WaitEvent and InitApp.
+- Segment alignment shift is 1 (2-byte), while the already-running NOWN-style
+  NGPROOF.EXE uses shift 4 (16-byte). Data segment begins at 0x4BE (not 16 aligned).
+- Both Windows 1.01 and Windows 3.0 /R hung. No individual cause was proven.
+
+Changes: Win1 writer minimum alignment 16 bytes, and the TEST GUI startup
+uses the known working InitTask/WaitEvent/InitApp order and ordinal imports.
+Normal linker behaviour is not changed: WIN1 is opt-in.
+
+Deploy: extract ZIP into C:\AI\JLINK over 0.0.7. No Watcom download required.
+Execute: RUN_WIN1_GATE.CMD. It rebuilds NBJWLINK.EXE and validates the GUI.
+Then copy OUTPUT\WIN1GUI.EXE to Windows 1.01 and Windows 3.0 /R guests.
+Return LOGS\GUI_BUILD.LOG and screenshots/results. Structural audits != runtime PASS.
+If either guest locks, don't retry variations: bring back the EXE and logs
+for byte-level comparison with the already proven NGPROOF.EXE.
+
+This overlay contains changed source/scripts only, not a prebuilt Win32 EXE.
+Existing project-local Open Watcom and JWASM binaries stay in place.

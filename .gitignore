@@ -1,0 +1,12 @@
+# Generated local build/test output
+/BUILD/
+/OUTPUT/
+/LOGS/
+/SOURCE/jwlink-2.0/build/
+/dist/
+*.zip
+*.tar.gz
+# External toolchains (never commit compiler or assembler binaries)
+/TOOLS/
+/OW_PORTABLE/
+/.vs/

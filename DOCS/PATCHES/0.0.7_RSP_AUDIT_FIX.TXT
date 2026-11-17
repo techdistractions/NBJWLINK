@@ -1,0 +1,21 @@
+NBJWLINK 0.0.7: RESPONSE-FILE COMMAND FIX (2026-10-16)
+
+Reported failure: E3033 directive error near the entire string
+  FORMAT WINDOWS OPTION WIN1 NAME ... FILE ...
+Cause: AUDIT.CMD and MAKE_WIN1GUI.CMD passed all directives as one
+quoted argument. JWLINK treated it as a single malformed directive.
+
+Fix: checked-in CRLF .RSP files with ONE directive per line. Invoke the
+actual patched linker as NBJWLINK.EXE @TESTS\RSP\name.RSP with project
+root as working directory. The six RSP files also allow manual inspection.
+No source, Win16 code generator, or Open Watcom changes. The successful
+MAKE.CMD Windows compiler build remains authoritative and unchanged.
+
+Verified with the same patched JWLINK 2.0 source compiled as a Linux
+host executable: positive WIN1MIN, WIN1MULTI, STDNE, GUI syntax pass;
+DOS/PE with WIN1 correctly rejected; NE layout and inter-object CALL
+fixup inspected. Batch and PowerShell execution on Windows remain pending.
+
+INSTALL: Extract over C:\AI\JLINK, replacing files.
+RUN: AUDIT.CMD, then MAKE_WIN1GUI.CMD. Do not rerun MAKE.CMD unless needed.
+The runtime gate remains Win1.01 and Win3 /R, after GUI build success.

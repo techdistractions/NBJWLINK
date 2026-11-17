@@ -1,0 +1,7 @@
+NBJWLINK 0.0.5: OFFLINE BUILD
+
+Open Watcom is NOW INCLUDED with this package.
+Run PRECHECK.CMD then MAKE.CMD. There is no download step.
+The historical GET_WATCOM.PS1 simply verifies the bundled toolchain.
+See DOCS/README_FIRST.TXT for full details.
+Windows build and Win1 runtime remain unverified.

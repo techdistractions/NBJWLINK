@@ -1,0 +1,20 @@
+NBJWLINK 0.0.9 - stale intermediary build repair
+
+Observed on Windows: WIN1 audit reports NE alignment shift <4 after
+0.0.8 source overlay. Clean Linux GCC test of the same source generates shift 4.
+The Windows MAKE.CMD deleted the copied EXE but not upstream objects. WMAKE
+can silently reuse old c/loados2.obj when overlay ZIP preserves original
+timestamps: linker build then claims success with earlier NE code.
+
+Fix: delete generated SOURCE\jwlink-2.0\build before compiling (only in
+the fixed source directory); validate source marker; fail if cleanup fails.
+Audits still run independently (AUDIT.CMD). They show file/shift on failure.
+
+INSTALL: extract overlay over C:\AI\JLINK.
+RUN: RUN_WIN1_GATE.CMD
+EXPECT: rebuilt Windows linker, all structural AUDIT passes, GUI EXE built.
+REAL-MODE UAT: Copy OUTPUT\WIN1GUI.EXE to Win1.01 and Win3.0 /R.
+Do not claim guest execution success until user confirms both.
+
+No Open Watcom download, no system PATH install, no linker binary included.
+Existing 0.0.5 portable toolchain and 0.0.8 source overlay are needed.

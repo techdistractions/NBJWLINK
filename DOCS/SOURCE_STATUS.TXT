@@ -1,0 +1,6 @@
+ARCHIVED NOTE — superseded by DOCS/README_FIRST.TXT in 0.0.5.
+
+Linux GCC 14.2: modified JWLINK compiled with GccUnix.mak and compatibility flags.
+OMF WIN1 single-object link PASS; multi-object external near-call FIXUPP PASS.
+DOS/PE WIN1 rejection PASS.
+Windows 32-bit port compilation and Win1 loader/runtime pending.

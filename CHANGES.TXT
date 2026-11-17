@@ -1,0 +1,62 @@
+NBJWLINK 0.0.9 (2026-10-16) - Force clean upstream build and expose NE shift
+- Fix incremental WMAKE reusing older c/loados2.obj, which can happen when
+  overlay ZIP restores source timestamps older than existing build objects.
+- MAKE.CMD now validates the 0.0.8 WIN1 NE-writer source marker and deletes
+  only SOURCE\jwlink-2.0\build (generated intermediates) before compiling.
+- Abort on failed cleanup; delete stale BUILD\NBJWLINK.EXE first as before.
+- TESTS\AUDIT_NE.PS1 reports exact EXE, shift, length, and header offset,
+  and retains (not weakens) paragraph-alignment and all other checks.
+- No changes to the patched linker C source or Win1 GUI startup fixture.
+- Windows host build/audits and Win1/Win3 /R guest execution are PENDING.
+
+NBJWLINK 0.0.8 (2026-10-16) - Windows 1.01 runtime probe correction
+- Fix the guest-tested WIN1GUI.ASM to use NOWN's runtime-proven 8086 startup:
+  eight NOPs, InitTask, WaitEvent(0), InitApp(DI), then MessageBox.
+- Add KERNEL.30 and USER.5 ordinal imports to WIN1GUI.RSP.
+- WIN1 NE writer now enforces a minimum 16-byte segment file alignment;
+  normal Win16, OS/2 and PE behaviour is unchanged.
+- Add independently checked startup and four-import NE structural audit;
+  reject legacy GUI fixture and incorrectly auto-selected alignment.
+- Add RUN_WIN1_GATE.CMD that serializes MAKE, AUDIT, and GUI build.
+- Acceptance remains PENDING: must execute corrected WIN1GUI.EXE inside
+  Windows 1.01 and Windows 3.0 /R. No runtime PASS is claimed.
+
+NBJWLINK 0.0.7 (2026-10-16) - RSP audit/GUI script repair
+- Correct AUDIT.CMD and MAKE_WIN1GUI.CMD: one JWLINK directive per RSP line.
+- Include six response fixtures, including positive/negative and GUI imports.
+- Reject missing fixture inputs, stale outputs, and failed linker return codes.
+- No NE generator, source, or compiler-toolchain changes.
+- Patched native Linux JWLINK tests PASS; Windows CMD/UAT still pending.
+
+NBJWLINK 0.0.6 (2026-10-16) - WMAKE macro path repair
+- Fix project-local MAKE invoking WMAKE without WATCOM make macro.
+- Explicitly override upstream Makefile's legacy \watcom fallback.
+- Add WATCOM_PATH.MAK preflight; fail before lengthy compiler build when wrong.
+- Log macro resolution to LOGS\WATCOM_MACRO.LOG and full compile to LOGS\BUILD_WIN32.LOG.
+- No C source, NE writer, WIN1 semantics or bundled compiler binaries changed.
+- Static/ZIP validation completed; Windows WMAKE/build/UAT requires user host.
+
+NBJWLINK 0.0.5 (2026-10-16)
+- Embed project-local Open Watcom v2 Windows x86 compiler and dependencies.
+- Remove network bootstrapping from MAKE.CMD, preserve original Windows paths.
+- Route compiler, librarian, make and bootstrap linker to project-local files.
+- Add strict Windows PE32 toolchain and final EXE preflight checks.
+- Add offline PRECHECK and historical downloader compatibility wrapper.
+- No source changes to the 0.0.2 OPTION WIN1 implementation.
+- Windows compile and Win1 guest runtime still require user validation.
+
+0.0.4  (2026-10-16) - PowerShell project-root argument repair
+- Fix MAKE.CMD passing a trailing backslash/quote into -Root; bootstrap now uses $PSScriptRoot.
+- Fix the same latent command-line bug in AUDIT.CMD and MAKE_WIN1GUI.CMD.
+- Add PRECHECK.CMD and GET_WATCOM.PS1 -CheckOnly for a no-download path check.
+- Paths are relative to the project directory (C:\AI\JLINK or any other location).
+- Update manifest for modified scripts; linker source and its Win1 output are unchanged.
+- Windows runtime/bootstrap execution remains unverified until user test.
+
+0.0.3  (2026-10-16) — Project-local toolchain bootstrap
+- No pre-existing system Open Watcom installation required.
+- Auto-fetch official Open Watcom portable snapshot when building, keeping
+  downloaded tools private to TOOLS\OW_PORTABLE.
+- Use WATCOM only within MAKE.CMD; preserve normal Windows PATH.
+- Reject stale/missing build output and check generated executable is PE32 x86.
+- Windows bootstrap/build and guest-runtime execution still require validation.
