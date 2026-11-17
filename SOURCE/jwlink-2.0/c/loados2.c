@@ -24,6 +24,11 @@
 *
 *  ========================================================================
 *
+* NBJWLINK MODIFICATION NOTICE -- 2026-10-16; notice added 2026-11-17.
+* Modified by NBJWLINK contributors: WIN1 NE writer layout: DOS header, resource table, segment flags/alignment and target metadata.
+* Original Sybase/Open Watcom copyright and license notices retained.
+* Modified source: https://github.com/techdistractions/NBJWLINK
+*
 * Description:  Utilities for processing creation of NE format files,
 *               used by 16-bit OS/2 and Windows.
 *

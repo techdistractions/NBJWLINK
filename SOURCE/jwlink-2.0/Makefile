@@ -1,5 +1,12 @@
 
 # Makefile to create JWlink.exe (Win32) and JWLinkd.exe (DOS)
+# NBJWLINK MODIFICATION NOTICE -- 2026-10-16; updated 2026-11-17.
+# Modified by NBJWLINK contributors: require explicit external WATCOM root
+# instead of silently using the upstream default.
+# Original upstream licensing and attribution remain in LICENSE.txt.
+# Modified source: https://github.com/techdistractions/NBJWLINK
+#
+
 #
 # Note: the debug version has 2 additional commands
 # - XDBG=n - debug log ( usually n is 2 )

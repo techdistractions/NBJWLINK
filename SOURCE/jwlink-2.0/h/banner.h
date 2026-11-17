@@ -24,6 +24,11 @@
 *
 *  ========================================================================
 *
+* NBJWLINK MODIFICATION NOTICE -- 2026-11-17.
+* Modified by NBJWLINK contributors: the command-line source availability banner and repository link.
+* Original Sybase/Open Watcom copyright and license notices retained.
+* Modified source: https://github.com/techdistractions/NBJWLINK
+*
 * Description:  Open Watcom banner strings and version defines.
 *
 ****************************************************************************/
@@ -59,7 +64,7 @@
 
 #define banner2a() "Portions Copyright (c) 1984-2002 Sybase, Inc. All Rights Reserved."
 
-#define banner3       "Source code is available under the Sybase Open Watcom Public License."
+#define banner3       "Source code under Sybase Open Watcom Public License v1.0: https://github.com/techdistractions/NBJWLINK"
 //#define banner3a      "See http://www.openwatcom.org/ for details."
 #define banner3a
 

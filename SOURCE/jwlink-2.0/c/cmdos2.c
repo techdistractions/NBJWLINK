@@ -24,6 +24,11 @@
 *
 *  ========================================================================
 *
+* NBJWLINK MODIFICATION NOTICE -- 2026-10-16; notice added 2026-11-17.
+* Modified by NBJWLINK contributors: WIN1 output-option handling and format validation.
+* Original Sybase/Open Watcom copyright and license notices retained.
+* Modified source: https://github.com/techdistractions/NBJWLINK
+*
 * Description:  Processing of linker options for OS/2 and Windows formats.
 *
 ****************************************************************************/

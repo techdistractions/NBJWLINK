@@ -1,3 +1,16 @@
+NBJWLINK 0.0.10 (2026-11-17) - licence/source-distribution notice update
+- Add dated notices of NBJWLINK changes to five modified C/header files,
+  the modified upstream Makefile, and the new banner.h source change.
+- Preserve existing upstream Sybase/Open Watcom licence headers unchanged.
+- Update the displayed linker banner to include the public modified-source URL
+  under the Sybase Open Watcom Public License v1.0.
+- Provide explicit licence acceptance and source location in README and NOTICE.
+- Release packaging includes the full license, NOTICE and SHA256 checksums.
+- Require a freshly rebuilt executable with the embedded source URL before
+  promotion to BIN/ and before v0.0.10 binary packaging.
+- No WIN1 linker-format changes. The rebuilt executable and native tests require
+  maintainer validation before public binary release.
+
 NBJWLINK 0.0.9 (2026-10-16) - Force clean upstream build and expose NE shift
 - Fix incremental WMAKE reusing older c/loados2.obj, which can happen when
   overlay ZIP restores source timestamps older than existing build objects.

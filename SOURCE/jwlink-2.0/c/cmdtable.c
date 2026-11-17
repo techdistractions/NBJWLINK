@@ -24,6 +24,11 @@
 *
 *  ========================================================================
 *
+* NBJWLINK MODIFICATION NOTICE -- 2026-10-16; notice added 2026-11-17.
+* Modified by NBJWLINK contributors: registration of the opt-in WIN1 linker option.
+* Original Sybase/Open Watcom copyright and license notices retained.
+* Modified source: https://github.com/techdistractions/NBJWLINK
+*
 * Description:  Command parsing tables.
 *
 ****************************************************************************/

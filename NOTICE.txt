@@ -1,0 +1,23 @@
+NBJWLINK 0.0.10 - Licence and Source Code Notice
+
+NBJWLINK is a modified version of JWlink 2.0.
+Portions Copyright (c) 1983-2002 Sybase, Inc. All Rights Reserved.
+Upstream JWlink source: https://github.com/JWasm/JWlink
+NBJWLINK modified source: https://github.com/techdistractions/NBJWLINK
+
+Source code, including NBJWLINK modifications, is publicly available at:
+https://github.com/techdistractions/NBJWLINK
+
+The source and corresponding covered code are distributed under the terms of
+the Sybase Open Watcom Public License version 1.0. The complete license is
+provided in LICENSE.txt, and is available from the source repository.
+
+Any use of the software (including reproduction, modification, or distribution)
+constitutes acceptance of the Sybase Open Watcom Public License v1.0. If you
+cannot accept all its terms and conditions, do not use the covered code.
+
+The software is provided AS IS, without warranty. See LICENSE.txt for the
+complete terms, including copyright notices and disclaimers.
+
+Modifications and dates are recorded in CHANGES.TXT and the notices in modified
+source files. Open Watcom compiler and JWASM assembler are not included.

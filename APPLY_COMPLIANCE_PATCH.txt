@@ -1,0 +1,51 @@
+NBJWLINK v0.0.10 - LICENCE COMPLIANCE OVERLAY
+====================================================
+
+APPLY
+-----
+Extract this ZIP directly into:
+C:\Retro\Dosbox-X\CDrive\NBJWLINK
+
+Allow overwrite of existing text files. The archive contains no compiler,
+assembler or prebuilt executable. Your prior BIN\NBJWLINK.EXE is not replaced
+until the successful local build and PROMOTE_RELEASE.CMD step.
+
+BUILD AND VALIDATE (Windows CMD)
+--------------------------------
+cd /d C:\Retro\Dosbox-X\CDrive\NBJWLINK
+set "WATCOM=C:\Retro\Dosbox-X\CDrive\TOOLS\Owatcom"
+set "JWASM_EXE=C:\Retro\Dosbox-X\CDrive\TOOLS\HOST\JWASM.EXE"
+PRECHECK
+MAKE
+AUDIT
+MAKE_WIN1GUI
+
+Now run OUTPUT\WIN1GUI.EXE in Windows 1.01 under DOSBox-X as a smoke test.
+Edit RELEASE_NOTES.md with ACTUAL v0.0.10 test results BEFORE packaging.
+Leave untested items as NOT VERIFIED.
+
+PROMOTE AND PACKAGE
+-------------------
+PROMOTE_RELEASE
+
+Outputs:
+  BIN\NBJWLINK.EXE               new Windows binary with embedded source URL
+  dist\NBJWLINK_0.0.10_Win32.zip  binary ZIP with licence and NOTICE
+  DOCS\MANIFEST.sha256           updated source manifest
+
+Before a Git commit, review git status and then run:
+  powershell.exe -NoProfile -ExecutionPolicy Bypass -File TESTS\UPDATE_MANIFEST.ps1
+  "C:\Program Files\Git\cmd\git.exe" status --short
+  "C:\Program Files\Git\cmd\git.exe" add -A
+  "C:\Program Files\Git\cmd\git.exe" commit -m "NBJWLINK 0.0.10 licence notice compliance"
+  "C:\Program Files\Git\cmd\git.exe" push origin main
+
+Create v0.0.10 from main and attach dist\NBJWLINK_0.0.10_Win32.zip.
+Keep v0.0.9 available as historical release; do not change an existing tag.
+
+LICENCE
+-------
+Sybase Open Watcom Public License v1.0 is unchanged in your local repository.
+This patch adds dated modification notices, a live source URL in the C banner,
+and source/acceptance notices in the binary distribution documentation.
+This is a targeted compliance improvement, not a legal certification.

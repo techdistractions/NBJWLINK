@@ -24,6 +24,11 @@
 *
 *  ========================================================================
 *
+* NBJWLINK MODIFICATION NOTICE -- 2026-10-16; notice added 2026-11-17.
+* Modified by NBJWLINK contributors: declaration of the WIN1 option handler.
+* Original Sybase/Open Watcom copyright and license notices retained.
+* Modified source: https://github.com/techdistractions/NBJWLINK
+*
 * Description:  OS/2 and Windows command processing function prototypes.
 *
 ****************************************************************************/
