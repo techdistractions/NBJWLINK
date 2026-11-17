@@ -1,5 +1,7 @@
 # NBJWLINK
 
+<img width="799" height="599" alt="nbjwlink" src="https://github.com/user-attachments/assets/17ac5cce-6bf7-404e-bb89-2d7118040249" />
+
 **NBJWLINK 0.0.10** is a modified version of [JWlink 2.0](https://github.com/JWasm/JWlink) that adds an **opt-in Windows 1.x compatibility profile** for 16-bit Windows New Executable (NE) output.
 
 The linker **runs on 32-bit-capable Windows** as a 32-bit x86 console application and **produces Win16 NE executables**. It is *not* itself a Windows 1.x application. The normal JWlink behaviour remains the default unless `OPTION WIN1` is specified.
